@@ -1,9 +1,7 @@
-import React from 'react'
-import Expense from './Expense'
-import axios from 'axios'
+import React from "react";
+import Expense from "./Expense";
+import axios from "axios";
 // import styled from 'styled-components'
-
-
 
 // const AddButton = styled.button`
 //  background: transparent;
@@ -22,31 +20,31 @@ import axios from 'axios'
 //     }
 //     `
 
-
-const Expenses = ({expenses, updateExpensesList}) => {
-
-const deleteExpense = (id) => {
-    axios.delete(`http://localhost:4000/expenses/${id}`)
-    .then(res => {
-        console.log(res);
-        updateExpensesList(id)
-    })
-    }
-
-// let  length = expenses.length
+const Expenses = ({ expenses, updateExpensesList, handleSubmit }) => {
+  const deleteExpense = (id) => {
+    axios.delete(`http://localhost:4000/expenses/${id}`).then((res) => {
+      console.log(res);
+      updateExpensesList(id);
+    });
+  };
 
   return (
-    <div>
-     
-        {/* {expenses[length-1] != null ? expenses.push( <AddExpenseBtn/>) : expenses.pop(<AddExpenseBtn/>)} */}
-        
-        { 
-        expenses.map(expense => {           
-        return <Expense key = {expense._id}  expense={expense} deleteExpense={deleteExpense} />})
-        }
-      
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", width: "80%" }}>
+        {/* {expenses[length-1] != null ? expenses.push(<AddExpenseBtn/>) : expenses.pop(<AddExpenseBtn/>)} */}
+        {expenses.map((expense) => {
+          return (
+            <Expense
+              key={expense._id}
+              expense={expense}
+              deleteExpense={deleteExpense}
+              handleSubmit={handleSubmit}
+            />
+          );
+        })}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Expenses
+export default Expenses;

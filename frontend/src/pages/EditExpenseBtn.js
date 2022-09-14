@@ -33,6 +33,8 @@ const EditExpenseBtn = ({setExpenses}) => {
     const initialState = {
         title: '',
         image: '',
+        // cost:[],
+        // note:''
     }
 
     const [formData, setFormData] = useState(initialState)
@@ -42,12 +44,12 @@ const EditExpenseBtn = ({setExpenses}) => {
         setFormData({...formData, [e.target.id] : e.target.value})
     }
 
-    const handleSubmit = (e) => {
+    const processSubmit = (e) => {
         e.preventDefault()
-        console.log(formData)
         axios.put(`http://localhost:4000/expenses/${id}`, formData )
         .then(res =>  {
             setFormData(initialState)
+            console.log(formData)
             setExpenses(res.data)
             navigate('/', { replace: true })
         })
@@ -61,9 +63,8 @@ const EditExpenseBtn = ({setExpenses}) => {
     }, [])
 
   return (
-    // <div>
     <ExpenseBox>
-        <form onSubmit={ handleSubmit }>
+        <form onSubmit={ processSubmit }>
             <div className='input'>
                 <label htmlFor="title">Title: </label>
                 <input type="text" value={ formData?.title } name='title' id="title" onChange = {handleChange}/>
@@ -78,7 +79,6 @@ const EditExpenseBtn = ({setExpenses}) => {
             
         </form>
     </ExpenseBox>
-    // </div>
   )
 }
 

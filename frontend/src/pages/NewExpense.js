@@ -32,6 +32,8 @@ let navigate = useNavigate()
 const initialState = {
     title: '',
     image: '',
+    cost:[],
+    note:''
 }
 
 const [formData, setFormData] = useState(initialState)
@@ -42,7 +44,6 @@ const handleChange = (e) => {
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(formData)
     axios.post('http://localhost:4000/expenses', formData)
     .then(res => {
         setFormData(initialState)
@@ -51,8 +52,7 @@ const handleSubmit = (e) => {
     }) 
 }
   return (
-    <NewExpenseForm onSubmit ={ handleSubmit }>
-        {/* <form onSubmit={ handleSubmit }> */}
+    <NewExpenseForm onSubmit = { handleSubmit }>
             <div className='input'>
                 <label htmlFor="title">Title: </label>
                 <input type="text"  name='title' id="title" onChange = {handleChange}/>
@@ -64,8 +64,6 @@ const handleSubmit = (e) => {
             <button type="submit">
             <img id="saveBtn"  src="https://www.iconpacks.net/icons/2/free-check-mark-icon-3279-thumb.png" alt="Save" />
             </button>
-            
-        {/* </form> */}
     </NewExpenseForm>
   )
 }
