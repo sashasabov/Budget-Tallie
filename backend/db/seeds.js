@@ -44,14 +44,14 @@ const  expenses = [
 
 
 bcrypt.hash('ABC123',2,(err,hash) => {
-    User.deleteMany({})
-    .then(() =>{
-        User.create({ name: "Sasha", isAdmin: true, password: hash})
-    })
-    .then(() =>{
+    User.deleteMany({})   
+    .then((user) => {
         Expense.deleteMany({})
         .then(() => {
-            return Expense.insertMany(expenses)
+           return Expense.insertMany(expenses)
+        })
+        .then((expenses) =>{
+            return User.create({ name: "Sasha", isAdmin: true, password: hash, expenses})
         })
         .then((insertedItems) =>{
             console.log(insertedItems)

@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
-  expenses: { type: mongoose.Schema.Types.ObjectId, ref: "Expense" },
+  expenses: [{ type: mongoose.Schema.Types.ObjectId, ref: "Expense" }],
 });
 
 userSchema.pre('save', function(next) {

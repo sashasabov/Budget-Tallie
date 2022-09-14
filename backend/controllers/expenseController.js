@@ -1,4 +1,7 @@
 const Expense = require('../model/expenses');
+const User = require('../model/user');
+////  
+// const User = require('../model/user')
 
 const index = (req, res) => {
   Expense.find({}, (err, expense) => {
@@ -33,6 +36,8 @@ const deleteOne = (req, res) => {
 
 const addOne = async (req, res) => {
   let newExpense = await Expense.create(req.body)
+  ////
+  // User.findById(req.params.id).populate(newExpense).exec((err) => console.log(err))
   res.json(newExpense)
   }
 
