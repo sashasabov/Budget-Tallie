@@ -1,6 +1,6 @@
 const Expense = require('../model/expenses');
 
-let index = (req, res) => {
+const index = (req, res) => {
   Expense.find({}, (err, expense) => {
     if (err) {
       res.status(400).json(err);
@@ -10,7 +10,7 @@ let index = (req, res) => {
   });
 };
 
-let detail = (req, res) => {
+const detail = (req, res) => {
   Expense.findById(req.params.id, (err, expense) => {
     if(err){
       res.status(400).json(err)
@@ -20,7 +20,7 @@ let detail = (req, res) => {
   });
 };
 
-let deleteOne = (req, res) => {
+const deleteOne = (req, res) => {
   Expense.findByIdAndDelete(req.params.id, (err, deletedExpense) => {
     if(err){
       res.status(400).json(err)
@@ -30,18 +30,13 @@ let deleteOne = (req, res) => {
   });
 };
 
-let addOne = (req, res) => {
-Expense.create(req.body, (err, newExpense) => {
-  if(err){
-    res.status(400).json(err)
-    return
-  }
-  newExpense = req.body;
-  res.json(newExpense)
-}
-)}
 
-let updateOne = (req, res) => {
+const addOne = async (req, res) => {
+  let newExpense = await Expense.create(req.body)
+  res.json(newExpense)
+  }
+
+const updateOne = (req, res) => {
 Expense.findByIdAndUpdate(req.params.id, req.body, (err, expenses) =>{
 if(err){
   res.status(400).json(err)

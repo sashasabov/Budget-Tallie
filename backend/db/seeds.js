@@ -6,37 +6,37 @@ const bcrypt = require('bcrypt')
 const  expenses = [
     {
         title: "Food",
-        cost: "",
+        cost: [],
         image: "https://cdn-icons-png.flaticon.com/512/5141/5141534.png",
         note: ""
     },
     {
         title: "Gas",
-        cost: "",
+        cost: [],
         image: "https://www.freeiconspng.com/thumbs/gas-icon/gas-station-icon--0.png",
         note: ""
     },
     {
         title: "Electric Bill",
-        cost: "",
+        cost: [],
         image: "https://static.thenounproject.com/png/884081-200.png",
         note: ""
     },
     {
         title: "Clothes",
-        cost: "",
+        cost: [],
         image: "https://static.thenounproject.com/png/524455-200.png",
         note: ""
     },
     {
         title: "Phone Bill",
-        cost: "",
+        cost: [],
         image: "https://www.shareicon.net/data/512x512/2016/04/16/750811_chat_512x512.png",
         note: ""
     },
     {
         title: "Gift",
-        cost: "",
+        cost: [],
         image: "https://cdn-icons-png.flaticon.com/512/5717/5717488.png",
         note: ""
     }
