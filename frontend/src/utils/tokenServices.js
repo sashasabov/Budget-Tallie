@@ -31,6 +31,5 @@ function getUserFromPayload() {
 module.exports = {
     setToken,
     getToken,
-    getUserFromPayload,
-    
+    getUserFromPayload,    
 }

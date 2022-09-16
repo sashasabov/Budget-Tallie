@@ -5,8 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { getToken } from '../utils/tokenServices'
 
 
-
-const LoginSignupPage = ({setUser,page}) => {
+const LoginSignupPage = ({setUser, page}) => {
     const navigate = useNavigate()
 
     useEffect(() => {

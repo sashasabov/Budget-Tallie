@@ -61,7 +61,6 @@ const LoginForm = ({setUser}) => {
             if(res.status === 400){
                 setErrorMsg(res.data)
             }
-
         })
 }
 

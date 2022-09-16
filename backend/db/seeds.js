@@ -43,16 +43,17 @@ const  expenses = [
 ]
 
 
-bcrypt.hash('ABC123',2,(err,hash) => {
+// bcrypt.hash('ABC123',2,(err,hash) => {
     User.deleteMany({})   
     .then((user) => {
-        Expense.deleteMany({})
+        Expense.deleteMany({})        
         .then(() => {
            return Expense.insertMany(expenses)
         })
-        .then((expenses) =>{
-            return User.create({ name: "Sasha", isAdmin: true, password: hash, expenses})
-        })
+        .then((expenses) =>{            
+            return User.create({ expenses })
+            //name: "Sasha", isAdmin: true, password: hash,
+        })        
         .then((insertedItems) =>{
             console.log(insertedItems)
         })
@@ -61,6 +62,6 @@ bcrypt.hash('ABC123',2,(err,hash) => {
             process.exit()
         })
     })
-    })
+    // })
 
 

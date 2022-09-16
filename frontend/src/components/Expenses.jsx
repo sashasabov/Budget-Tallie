@@ -20,7 +20,7 @@ import axios from "axios";
 //     }
 //     `
 
-const Expenses = ({ expenses, updateExpensesList, handleSubmit }) => {
+const Expenses = ({ expenses, updateExpensesList, handleSubmit, defaultExpensesId }) => {
   const deleteExpense = (id) => {
     axios.delete(`http://localhost:4000/expenses/${id}`).then((res) => {
       console.log(res);
@@ -32,13 +32,14 @@ const Expenses = ({ expenses, updateExpensesList, handleSubmit }) => {
     <div style={{ display: "flex", justifyContent: "center" }}>
       <div style={{ display: "flex", flexWrap: "wrap", width: "80%" }}>
         {/* {expenses[length-1] != null ? expenses.push(<AddExpenseBtn/>) : expenses.pop(<AddExpenseBtn/>)} */}
-        {expenses.map((expense) => {
+        {expenses.map((expense) => { 
           return (
             <Expense
               key={expense._id}
               expense={expense}
               deleteExpense={deleteExpense}
               handleSubmit={handleSubmit}
+              defaultExpensesId={defaultExpensesId}
             />
           );
         })}

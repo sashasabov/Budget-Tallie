@@ -42,7 +42,7 @@ const SignupForm = ({setUser}) => {
     const [errorMsg,setErrorMsg] = useState({})
 
     const handleChange =(e) => {
-        setFormData({...formData, [e.target.id] :e.target.value})
+        setFormData({...formData, [e.target.id] : e.target.value})
     }
 
     const handleSubmit = (e) => {

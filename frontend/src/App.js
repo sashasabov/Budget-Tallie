@@ -7,17 +7,20 @@ import NewExpense from './pages/NewExpense';
 import ExpensesReport from './pages/ExpensesReport';
 import LoginSignupPage from './pages/LoginSignupPage';
 // import { getUserFromPayload } from "../utils/tokenServices";
+// import axios from 'axios';
 
 function App() {
 
 const [ expenses, setExpenses ] = useState([])
 const [user, setUser] = useState()
+const [defaultExpensesId, setDefaultExpensesId] = useState([])
 
-useEffect(() =>{
+useEffect(() => {
   fetch('http://localhost:4000/expenses')
   .then(res => res.json())
   .then(data => setExpenses(data))
 },[])
+
 
 const updateExpensesList = (id) => {
   setExpenses(expenses.filter(expense => expense._id !== id))
@@ -31,13 +34,12 @@ const addExpense = (expense) => {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home expenses={expenses} updateExpensesList={updateExpensesList} setExpenses={setExpenses}/>}/>
+        <Route path='/' element={<Home defaultExpensesId={defaultExpensesId} setdefaultExpensesId={setDefaultExpensesId} expenses={expenses} updateExpensesList={updateExpensesList} setExpenses={setExpenses}/>}/>
         <Route path='/expense/edit/:id' element={<EditExpenseBtn expenses={expenses} setExpenses={setExpenses}/>}/>
         <Route path='/expense/new' element={<NewExpense addExpense={addExpense}/>}/>
         <Route path='/expenses/report' element={<ExpensesReport expenses={expenses} />}/>
         <Route path='/login' element={<LoginSignupPage setUser={setUser} page="login"/>}/>
         <Route path='/signup' element={<LoginSignupPage setUser={setUser} page="signup"/>}/>
-
       </Routes>
     </div>
   );
