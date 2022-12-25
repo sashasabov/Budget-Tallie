@@ -11,7 +11,6 @@ const entrySchema = new mongoose.Schema(
 );
 
 const expenseSchema = new mongoose.Schema({
-  // owner: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
   title: String,
   cost: [entrySchema],
   image: String,

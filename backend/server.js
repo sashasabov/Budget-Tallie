@@ -7,6 +7,7 @@ const expenseRoutes = require('./routes/expenseRoutes');
 const entryRoutes = require('./routes/entryRoutes')
 const authRoutes = require('./routes/authRoutes')
 const cors = require('cors')
+require('dotenv').config();
 
 require('./db/connection');
 

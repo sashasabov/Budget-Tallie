@@ -48,9 +48,9 @@ function signup(req, res) {
             return
         }
         User.create({email: email, password:pass1, name:name}, (err, newUser) => {            
-            Expense.find({}, (err, expenses) =>{
+            Expense.find({}, (err, expenses) => {
             if(err) return res.status(400).json(err)
-                // console.log(expenses)
+                // console.log("expenses from the loop",expenses)
                  for(let i=0; i < expenses.length-1; i++){
                 newUser.expenses.push(expenses[i]._id)           
             }
@@ -62,17 +62,27 @@ function signup(req, res) {
     })
 }
 
-function getExpenses(req, res){
-    User.findById(req.params.id, (err, user)=>{
-    if(err) return res.status(400).json(err)
-    console.log("User Expenses", user.expenses)
-    res.json(user.expenses)
-}).clone()
-}
+// function defaultUser(req, res){
+//     User.findOne({name:"Sasha"}, (err, user)=>{
+//         if(err) return res.status(400).json(err)
+//         console.log("Default User: ", user)
+//         console.log("Default user expenses:", user.expenses)
+//         return {user}
+//     })
+// }
 
+// function getExpenses(req, res){
+//     User.findById(req.params.userId, (err, user)=>{
+//     if(err) return res.status(400).json(err)
+//     console.log("This User: ", user)
+//     if(user===null){user = defaultUser();}
+//     else{ res.json(user.expenses) }     
+// }).clone()
+// }
 
 module.exports = {
     login,
     signup,
-    getExpenses
+    // getExpenses,
+    // defaultUser
 }

@@ -39,11 +39,23 @@ const  expenses = [
         cost: [],
         image: "https://cdn-icons-png.flaticon.com/512/5717/5717488.png",
         note: ""
+    },
+    {
+        title: "Ice Cream",
+        cost: [],
+        image: "https://cdn.iconscout.com/icon/free/png-256/ice-cream-1769297-1505070.png",
+        note: ""
+    },
+    {
+        title: "Buzzie-Woozie",
+        cost: [],
+        image: "https://us.123rf.com/450wm/ongkachakon/ongkachakon2011/ongkachakon201100028/158832421-no-alcohol-icon-sign-with-wine-glass-liquor-bottle-and-beer-glass-in-red-circle-stop-sign-vector-des.jpg?ver=6",
+        note: ""
     }
 ]
 
 
-// bcrypt.hash('ABC123',2,(err,hash) => {
+// bcrypt.hash('123',2,(err,hash) => {
     User.deleteMany({})   
     .then((user) => {
         Expense.deleteMany({})        
@@ -51,8 +63,8 @@ const  expenses = [
            return Expense.insertMany(expenses)
         })
         .then((expenses) =>{            
-            return User.create({ expenses })
-            //name: "Sasha", isAdmin: true, password: hash,
+            return User.create({name: "Sasha", email:"sasha@email.com", password: "123", expenses })   
+            //hash        
         })        
         .then((insertedItems) =>{
             console.log(insertedItems)
@@ -63,5 +75,7 @@ const  expenses = [
         })
     })
     // })
+
+  
 
 

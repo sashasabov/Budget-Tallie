@@ -1,4 +1,5 @@
 # Project-4 "BudgetTallie"
+https://i.imgur.com/w7Ri4ap.png
 
 ## Project idea
 
@@ -12,8 +13,7 @@ This app is designed to help user to track expenses, compile daily, weekly or mo
 - As a user, I would like to be able to update/delete an expense.
 - As a user, I would like to see total of all expenses, and by category.
 - As a user, I would like to be able to navigate to expenses reports page.
-- As a user, I would like to be able to navigate to expenses reports page.
-- As a user, I would like to be able to navigate to progress graphs page.
+- As a user, I would like to be able to navigate to progress graphs page. (work in progress)
 - As a user, I would like to be able to log out.
 
 *Stretch Goals*
@@ -22,11 +22,32 @@ This app is designed to help user to track expenses, compile daily, weekly or mo
 - As a user, I would like to be able see which month has most of expenses. 
 - As a user, I would like to be able to sort games by rating and date uploaded.
 
+## Technologies used:
+- Auth-based token for login/sign up
+- morgan middleware to simplify loggin HTTP requests
+- Used cors package connecting Express and React
+- Dynamic data implementation like User name
+- For models used refferenced so as embedded schemas
+- For styling: used styled component with css (planning on updating to Bootstrap to make it more responsive)
+
 ## Front-end
-I'm planning on using React.
+React.
 
 ## Back-end
 Express.
+
+## Dadtabase:
+MongoDB.
+
+## General Approach:
+- Created data to work with and seeded it on MongoDB
+- Created full CRUD on backend
+- Set up frontend with React
+- Fetch data with backend
+- Implementing styling 
+- Adding features like Expenses Report, alerts.
+- Setting up token-base auth
+- Testing lonin/sign up.
 
 ## List of Mongoose models and their properties:
 
