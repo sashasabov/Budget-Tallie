@@ -49,7 +49,7 @@ const LoginForm = ({setUser}) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('https://budget-tallie-backend.herokuapp.com/auth/login', formData)
+        axios.post('https://budget-tallie-backend.onrender.com/auth/login', formData)
         // axios.post('http://localhost:4000/auth/login', formData)
         .then(res =>{
             if(res.status === 200){

@@ -5,7 +5,7 @@ import axios from "axios";
 const ExpensesDetails = ({ expenses }) => {
   const deleteEntry = (id, entryId) => {
     axios
-      .delete(`https://budget-tallie-backend.herokuapp.com/expenses/${id}/entries/${entryId}`)
+      .delete(`https://budget-tallie-backend.onrender.com/expenses/${id}/entries/${entryId}`)
       // .delete(`http://localhost:4000/expenses/${id}/entries/${entryId}`)
       .then((res) => {
         console.log(res);

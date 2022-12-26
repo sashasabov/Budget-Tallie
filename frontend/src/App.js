@@ -21,7 +21,7 @@ const [ expenses, setExpenses ] = useState([])
 let user = getUserFromPayload()
 console.log(user)
 
-// PLANNING TO MAKE THIS APP DYNAMIC FOR USERS
+// PLANNING TO MAKE THIS APP USER DYNAMIC 
 
 // let userId = user.id
 // let userId = defUser(user)
@@ -52,7 +52,7 @@ console.log(user)
 // }, [userId])
 
 useEffect(() => {
-  fetch('https://budget-tallie-backend.herokuapp.com/expenses')
+  fetch('https://budget-tallie-backend.onrender.com/expenses')
   // fetch('http://localhost:4000/expenses')
   .then(res => res.json())
   .then(data => setExpenses(data))

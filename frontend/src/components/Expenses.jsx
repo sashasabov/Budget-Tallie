@@ -7,7 +7,7 @@ const Expenses = ({ expenses, updateExpensesList, handleSubmit, userId}) => {
 
   const deleteExpense = (id, userId) => {
     // axios.delete(`http://localhost:4000/expenses/${id}`).then((res) => {
-    axios.delete(`https://budget-tallie-backend.herokuapp.com/expenses/${id}`).then((res) => {
+    axios.delete(`https://budget-tallie-backend.onrender.com/expenses/${id}`).then((res) => {
     // axios.delete(`http://localhost:4000/expenses/${id}/${userId}`).then((res) => {
       console.log(res);
       updateExpensesList(id);

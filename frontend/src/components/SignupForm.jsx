@@ -47,7 +47,7 @@ const SignupForm = ({setUser}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('https://budget-tallie-backend.herokuapp.com/auth/signup', formData)
+        axios.post('https://budget-tallie-backend.onrender.com/auth/signup', formData)
         // axios.post('http://localhost:4000/auth/signup', formData)
         .then(res =>{
             if(res.status === 200){

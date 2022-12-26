@@ -41,7 +41,7 @@ const Home = ({
     if(!formData.amount){alert("Enter amount spent first!"); return}
     else {
     axios
-      .post(`https://budget-tallie-backend.herokuapp.com/expenses/${id}/entries`, formData)
+      .post(`https://budget-tallie-backend.onrender.com/expenses/${id}/entries`, formData)
       // .post(`http://localhost:4000/expenses/${id}/entries`, formData)
       .then((res) => {
         setFormData(initialState);

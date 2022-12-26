@@ -55,7 +55,7 @@ const EditExpenseBtn = ({setExpenses}) => {
 
     const processSubmit = (e) => {
         e.preventDefault()
-        axios.put(`https://budget-tallie-backend.herokuapp.com/expenses/${id}`, formData )
+        axios.put(`https://budget-tallie-backend.onrender.com/expenses/${id}`, formData )
         // axios.put(`http://localhost:4000/expenses/${id}`, formData )
         .then(res =>  {
             setFormData(initialState)
@@ -66,7 +66,7 @@ const EditExpenseBtn = ({setExpenses}) => {
     }
 
     useEffect(()=> {
-        axios.get(`https://budget-tallie-backend.herokuapp.com/expenses/${id}`)
+        axios.get(`https://budget-tallie-backend.onrender.com/expenses/${id}`)
         // axios.get(`http://localhost:4000/expenses/${id}`)
         .then(res => {
             setFormData(res.data)
