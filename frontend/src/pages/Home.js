@@ -57,7 +57,7 @@ const Home = ({
     <div>
       <ExpenseLog handleChange={handleChange} balance={balance} handleBalanceAccrual={handleBalanceAccrual} expenses={expenses}/>
 
-      <h1>Hello {user.name}!</h1>
+      <h1 style={{fontFamily:"FreshTrack", fontSize:"70px", color:"lightgreen", textShadow:"1px 1px 2px black, red 0 -2px"}}>Hello {user.name}!</h1>
       <Expenses
         // userId={userId}
         // user={user}

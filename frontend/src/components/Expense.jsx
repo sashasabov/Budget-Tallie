@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const ExpenseBox = styled.div` 
   border: 2px solid darkgreen;
@@ -8,15 +9,21 @@ const ExpenseBox = styled.div`
   height: 300px;
   width: 300px; 
   margin: 2rem 2rem; 
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.20),
+      0 17px 50px 0 rgba(0, 0, 0, 0.20);
+
   img {
     height: 150px;
     width: 150px;
     bottom: 2rem;
+    
   }
+  
   #Btn {
     height: 30px;
     width: 30px;
     margin: 1rem;
+    
   }
   #Btn:hover {
     border-radius: 10%;

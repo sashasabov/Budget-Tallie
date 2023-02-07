@@ -67,12 +67,12 @@ const LoginForm = ({setUser}) => {
 
 
   return (
-    <div>
-        <div style={{marginTop:"5%"}}><h1>Welcome to Budget-Tallie!</h1></div>
-        
-     <FormBox onSubmit={handleSubmit}>     
-            <ul>
-                <li> <h1 style={{color:"grey"}}>Log In</h1></li>
+    <div>        
+        <img  style={{marginTop:"2%"}} src='/static/WelcomeTo.png' alt="Welcome to"/>
+    
+        <FormBox onSubmit={handleSubmit}>     
+            <ul>            
+                <img src='/static/BudgetTallie.png' alt="Welcome to"/>
                 <li><input type="email" id="email" placeholder=' Email' onChange={handleChange}/></li>
                 <li><input type="password" id="password" placeholder=' Password' onChange={handleChange}/></li>
                 <li>
